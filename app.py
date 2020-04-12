@@ -5,10 +5,9 @@ from sqlalchemy.sql import func
 
 app=Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgre123@localhost/height_collector'
-app.config['SQLALCHEMY_DATABASE_URI']='postgres://nfcxnxovvpepfq:d53a3a57f40002a702a6a9492f3e18a86590c5509d9571bf766129ebb52c8c81@ec2-35-172-85-250.compute-1.amazonaws.com:5432/delc5dflu1elde?sslmode=require'
+app.config['SQLALCHEMY_DATABASE_URI']='postgres://nfcxnxovvpepfq:d53a3a57f40002a702a6a9492f3e18a86590c5509d9571bf766129ebb52c8c81@ec2-35-172-85-250.compute-1.amazonaws.com:5432/delc5dflu1elde?sslmode=require '
 
 db=SQLAlchemy(app)
-
 
 class Data(db.Model):
     __tablename__="data"
@@ -42,11 +41,6 @@ def success():
         else:
             return render_template("index.html",text= " Seems like we have already got something from that email address already")
 
-
 if __name__== '__main__':
     app.debug=True
     app.run()
-
-
-
-

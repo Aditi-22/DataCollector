@@ -2,12 +2,11 @@ from email.mime.text import MIMEText
 import smtplib
 
 def send_email(email,height,avg_height,count):
-    from_email="aditikansal05@gmail.com"
-    from_password="Gemail_1901"
+    from_email="aditiagar228@gmail.com"
+    from_password="Haldwani_42"
     to_email=email
     subject = "Height Data"
     message = "Hey there, your height is: <strong>%s</strong>. <br> Average height of all is <strong>%s</strong> and that is calculated out of <strong>%s</strong> people. Thanks!!" % (height,avg_height,count) 
-    print(str(msg))
     msg = MIMEText(message,'html')
     msg['Subject']=subject
     msg['From']= from_email
@@ -16,6 +15,4 @@ def send_email(email,height,avg_height,count):
     gmail.ehlo()
     gmail.starttls()
     gmail.login(from_email,from_password)
-    print("login from email done")
     gmail.send_message(msg)
-    print("email sent")
